@@ -204,12 +204,18 @@ function QuizMeCard() {
 
   const GenerateAIContent = async (formData: any) => {
     setLoading(true);
-    const selectedPrompt = `Generate ${formData.numQuestions} fill-in-the-blank questions on ${formData.subject}. 
-    Each question should contain a blank line for the user to fill in, and also provide the correct answer at the end of each question. 
-    Format each question as follows: 
-    Question: <question with blank>
-    Correct Answer: <correct answer> 
-    No additional info, directly start with questions.`;
+    const selectedPrompt = `Generate ${formData.numQuestions} fill-in-the-blank questions on ${formData.subject}, including correct answers. Use this format:
+Question: <question with blank>
+Correct Answer: <answer>`;
+
+
+// Generate ${formData.numQuestions} fill-in-the-blank questions on ${formData.subject}. 
+//     Each question should contain a blank line for the user to fill in, and also provide the correct answer at the end of each question. 
+//     Format each question as follows: 
+//     Question: <question with blank>
+//     Correct Answer: <correct answer> 
+//     No additional info, directly start with questions.
+
 
     try {
       const result = await chatSession.sendMessage(selectedPrompt);

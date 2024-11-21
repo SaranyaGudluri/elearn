@@ -85,11 +85,11 @@ function SideNav() {
             icon: Pen,
             path: '/dashboard/assess'
         },
-        {
-            name: 'History',
-            icon: FileClock,
-            path: '/dashboard/history'
-        },
+        // {
+        //     name: 'History',
+        //     icon: FileClock,
+        //     path: '/dashboard/history'
+        // },
         // {
         //     name: 'Billing',
         //     icon: WalletCards,
